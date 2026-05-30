@@ -1,5 +1,5 @@
 """
-Content Generator — calls Claude API to pick a random scripture
+Content Generator â calls Claude API to pick a random scripture
 and generate the caption, hashtags, and verse text for each post.
 """
 import random, requests, json
@@ -42,7 +42,7 @@ def generate_post(slot: str, api_key: str, translation: str = 'ERV (Easy-to-Read
     angle = 'energising morning tone' if slot == 'Morning' else 'calm reflective evening tone'
 
     prompt = f"""You are creating content for Kingdom In Action, a Christian church Instagram page.
-Generate ONE reel post. Return ONLY a raw JSON object — no markdown, no backticks, nothing else.
+Generate ONE reel post. Return ONLY a raw JSON object â no markdown, no backticks, nothing else.
 
 Theme: {theme}
 Scripture: {ref}
@@ -59,7 +59,7 @@ Translation: {translation}
             'content-type': 'application/json',
         },
         json={
-            'model': 'claude-sonnet-4-20250514',
+            'model': 'claude-sonnet-4-6',
             'max_tokens': 500,
             'messages': [{'role': 'user', 'content': prompt}],
         },
