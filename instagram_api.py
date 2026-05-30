@@ -12,6 +12,7 @@ def _upload_to_cloudinary(video_path, cloud, key, secret):
         video_path,
         resource_type='video',
         folder='kia_reels',
+        public_id='daily_reel',
         overwrite=True,
     )
     url = result['secure_url']
